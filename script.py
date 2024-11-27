@@ -99,21 +99,34 @@ while controlador:
    
    print()
    print("Movendo peças para a área de montagem dos membros inferiores!")
-   
    time.sleep(2)
-   
    print("Montando peças dos membros inferiores...")
    tempoMontagemInferiores = random.randint(5, 8)
    time.sleep(tempoMontagemInferiores)
    print(f"Tempo para montagem: {tempoMontagemInferiores} segundos")
    printInferiores()
+   chaveContadorInferiores = f"Ciclo {contador}"
+   tempoTotalMontagemInferiores[chaveContadorInferiores] = tempoMontagemInferiores
    time.sleep(2)
+   print()
    
    print("Movendo peças para a área de montagem dos membros superiores!")
+   time.sleep(2)
+   print("Montando peças dos membros superiores...")
+   tempoMontagemSuperiores = random.randint(5,8)
+   time.sleep(tempoMontagemSuperiores)
+   print(f"Tempo para montagem: {tempoMontagemSuperiores} segundos")
+   printRoboInteiro()
+   chaveContadorSuperiores = f"Ciclo {contador}"
+   tempoTotalMontagemSuperiores[chaveContadorSuperiores] = tempoMontagemSuperiores
+   time.sleep(2)
+   print()
 
    print(f"Robôs montados: {totalRobo}")
    print()
    time.sleep(2)
+   
+   contador += 1
    
    if totalRobo == 3:
       controlador = False
